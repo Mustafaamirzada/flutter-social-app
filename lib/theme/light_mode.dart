@@ -1,0 +1,19 @@
+// ignore_for_file: deprecated_member_use
+import 'package:flutter/material.dart';
+
+ThemeData lightMode = ThemeData(
+  brightness: Brightness.light,
+  colorScheme: ColorScheme.light(
+    background: Colors.grey.shade300,
+    inverseSurface: Colors.grey.shade300,
+    primary: Colors.grey.shade200,
+    secondary: Colors.grey.shade400,
+    inversePrimary: Colors.grey.shade800,
+    tertiary: Colors.grey.shade900
+  ),
+  textTheme: ThemeData.light().textTheme.apply(
+    decorationColor: Colors.grey.shade900,
+        bodyColor: Colors.grey[800],
+        displayColor: Colors.black,
+      ),
+);
