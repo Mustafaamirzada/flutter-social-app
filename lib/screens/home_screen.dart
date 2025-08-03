@@ -164,7 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.blueGrey,
                           ),
                           Text(
-                              'Unable to Connect to Internet.\n Plesae Check Your Internet Connection.')
+                            'Unable to Connect to Internet.\n Plesae Check Your Internet Connection.',
+                          ),
                         ],
                       ),
                     );
