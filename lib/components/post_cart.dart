@@ -1,9 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace, non_constant_identifier_names, deprecated_member_use, avoid_print
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:fchat/components/create_comment.dart';
-import 'package:fchat/controllers/like_controller.dart';
-import 'package:fchat/models/post.dart';
-import 'package:fchat/screens/post_screen.dart';
+import 'package:flutter_social_app/components/create_comment.dart';
+import 'package:flutter_social_app/controllers/like_controller.dart';
+import 'package:flutter_social_app/models/post.dart';
+import 'package:flutter_social_app/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:readmore/readmore.dart';

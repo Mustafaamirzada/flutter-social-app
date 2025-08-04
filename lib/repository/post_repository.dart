@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 import 'dart:convert';
 import 'dart:io';
-import 'package:fchat/models/post.dart';
-import 'package:fchat/models/post_hive.dart';
+import 'package:flutter_social_app/models/post.dart';
+import 'package:flutter_social_app/models/post_hive.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;

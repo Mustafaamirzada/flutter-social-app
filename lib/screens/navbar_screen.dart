@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_final_fields, use_build_context_synchronously
-import 'package:fchat/screens/home_screen.dart';
-import 'package:fchat/screens/search_screen.dart';
+import 'package:flutter_social_app/screens/home_screen.dart';
+import 'package:flutter_social_app/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavbarScreen extends StatefulWidget {

@@ -1,13 +1,13 @@
 // ignore_for_file: sized_box_for_whitespace, use_build_context_synchronously
 import 'dart:async';
-import 'package:fchat/auth/auth.dart';
-import 'package:fchat/components/create_post.dart';
-import 'package:fchat/components/post_cart.dart';
-import 'package:fchat/controllers/post_controller.dart';
-import 'package:fchat/models/post.dart';
-import 'package:fchat/repository/post_repository.dart';
-import 'package:fchat/services/auth_service.dart';
-import 'package:fchat/utils/helpers.dart';
+import 'package:flutter_social_app/auth/auth.dart';
+import 'package:flutter_social_app/components/create_post.dart';
+import 'package:flutter_social_app/components/post_cart.dart';
+import 'package:flutter_social_app/controllers/post_controller.dart';
+import 'package:flutter_social_app/models/post.dart';
+import 'package:flutter_social_app/repository/post_repository.dart';
+import 'package:flutter_social_app/services/auth_service.dart';
+import 'package:flutter_social_app/utils/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';

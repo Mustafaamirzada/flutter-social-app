@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:fchat/provider/auth_provider.dart';
+import 'package:flutter_social_app/provider/auth_provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config/constants/config.dart';

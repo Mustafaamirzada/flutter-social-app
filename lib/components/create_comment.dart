@@ -1,6 +1,6 @@
-import 'package:fchat/components/my_button.dart';
-import 'package:fchat/components/my_text_feild.dart';
-import 'package:fchat/repository/comment_repository.dart';
+import 'package:flutter_social_app/components/my_button.dart';
+import 'package:flutter_social_app/components/my_text_feild.dart';
+import 'package:flutter_social_app/repository/comment_repository.dart';
 import 'package:flutter/material.dart';
 
 class CreateCommentSheet extends StatefulWidget {

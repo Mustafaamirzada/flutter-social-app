@@ -1,4 +1,4 @@
-import 'package:fchat/config/constants/config.dart';
+import 'package:flutter_social_app/config/constants/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 

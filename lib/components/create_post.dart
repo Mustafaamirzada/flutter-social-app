@@ -1,6 +1,6 @@
 // ignore_for_file: unused_field
 import 'dart:io';
-import 'package:fchat/repository/post_repository.dart';
+import 'package:flutter_social_app/repository/post_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';

@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
-import 'package:fchat/screens/navbar_screen.dart';
-import 'package:fchat/services/auth_service.dart';
-import 'package:fchat/utils/helpers.dart';
+import 'package:flutter_social_app/screens/navbar_screen.dart';
+import 'package:flutter_social_app/services/auth_service.dart';
+import 'package:flutter_social_app/utils/helpers.dart';
 import 'package:flutter/material.dart';
 import '../components/my_button.dart';
 import '../components/my_text_feild.dart';

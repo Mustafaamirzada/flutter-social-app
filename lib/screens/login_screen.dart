@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
-import 'package:fchat/screens/navbar_screen.dart';
-import 'package:fchat/services/auth_service.dart';
+import 'package:flutter_social_app/screens/navbar_screen.dart';
+import 'package:flutter_social_app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import '../components/my_button.dart';
 import '../components/my_text_feild.dart';

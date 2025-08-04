@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
-import 'package:fchat/auth/login_or_register.dart';
-import 'package:fchat/screens/navbar_screen.dart';
+import 'package:flutter_social_app/auth/login_or_register.dart';
+import 'package:flutter_social_app/screens/navbar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

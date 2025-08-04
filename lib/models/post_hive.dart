@@ -1,4 +1,4 @@
-import 'package:fchat/models/post.dart';
+import 'package:flutter_social_app/models/post.dart';
 import 'package:hive/hive.dart';
 
 part 'post_hive.g.dart';

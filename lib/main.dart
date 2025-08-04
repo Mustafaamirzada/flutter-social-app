@@ -1,8 +1,8 @@
-import 'package:fchat/auth/auth.dart';
-import 'package:fchat/models/post_hive.dart';
-import 'package:fchat/provider/auth_provider.dart';
-import 'package:fchat/theme/dark_mode.dart';
-import 'package:fchat/theme/light_mode.dart';
+import 'package:flutter_social_app/auth/auth.dart';
+import 'package:flutter_social_app/models/post_hive.dart';
+import 'package:flutter_social_app/provider/auth_provider.dart';
+import 'package:flutter_social_app/theme/dark_mode.dart';
+import 'package:flutter_social_app/theme/light_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';

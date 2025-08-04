@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:fchat/controllers/post_controller.dart';
-import 'package:fchat/models/post.dart';
-import 'package:fchat/repository/post_repository.dart';
+import 'package:flutter_social_app/controllers/post_controller.dart';
+import 'package:flutter_social_app/models/post.dart';
+import 'package:flutter_social_app/repository/post_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';

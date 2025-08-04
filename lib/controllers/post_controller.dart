@@ -1,5 +1,5 @@
-import 'package:fchat/models/post.dart';
-import 'package:fchat/repository/post_repository.dart';
+import 'package:flutter_social_app/models/post.dart';
+import 'package:flutter_social_app/repository/post_repository.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class PostController {
