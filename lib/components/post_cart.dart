@@ -7,6 +7,7 @@ import 'package:flutter_social_app/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:readmore/readmore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PostCart extends StatefulWidget {
   final Post? post;
@@ -21,9 +22,11 @@ class _PostCartState extends State<PostCart> {
   bool isliked = false;
 
   // toggle between Like and Dislike Posts
-  void toggleLikes() {
+  void toggleLikes() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final int? userId = prefs.getInt('id');
     if (!isliked) {
-      likeController.likePost(1, widget.post!.id);
+      likeController.likePost(userId!, widget.post!.id);
       setState(() {
         isliked = !isliked; // true
       });
@@ -55,9 +58,6 @@ class _PostCartState extends State<PostCart> {
                 CircleAvatar(
                   radius: 24,
                   backgroundColor: Colors.blue,
-                  // backgroundImage: CachedNetworkImageProvider(
-                  //   "https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
-                  // ),
                   backgroundImage: AssetImage('assets/avatar.png'),
                 ),
                 SizedBox(width: 10),
@@ -84,20 +84,7 @@ class _PostCartState extends State<PostCart> {
               trimExpandedText: 'Show less',
               moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: Text(
-            //         post!.description,
-            //         overflow: TextOverflow.ellipsis,
-            //         maxLines: 2,
-            //         style: TextStyle(
-            //           color: Theme.of(context).colorScheme.inversePrimary,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            
             Container(
               height: 350,
               width: 360,
@@ -144,8 +131,12 @@ class _PostCartState extends State<PostCart> {
                     toggleLikes();
                   },
                   icon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedHeartAdd,
-                    color: Colors.grey,
+                        icon: isliked
+        ? HugeIcons.strokeRoundedHeartCheck // Use filled heart icon
+        : HugeIcons.strokeRoundedHeartAdd,
+    color: isliked ? Colors.red : Colors.grey
+                    // icon: HugeIcons.strokeRoundedHeartAdd,
+                    // color: Colors.grey,
                   ),
                 ),
                 // bookmark button

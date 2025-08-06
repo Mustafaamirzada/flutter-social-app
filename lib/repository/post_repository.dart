@@ -150,4 +150,41 @@ class PostRepository {
     }
   }
 
+
+  Future<void> updatePost(int id, String title, String desc, File? mediaUrl) async {
+    try {
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      String? token = pref.getString('token');
+      int? userId = pref.getInt('id');
+      final uri = Uri.parse("${Config.Basev1Url}/posts/$id");
+      final request = http.MultipartRequest('POST', uri)
+        ..headers['Authorization'] = 'Bearer $token'
+        ..headers['Accept'] = 'application/json'
+        ..fields['_method'] = 'PUT'
+        ..fields['title'] = title
+        ..fields['description'] = desc
+        ..fields['user_id'] = userId.toString();
+      if (mediaUrl != null) {
+        final filestream = await http.MultipartFile.fromPath('media_url', mediaUrl.path);
+        request.files.add(filestream);
+      }
+
+      final streamResponse = await request.send();
+      print(request.fields);
+      final response = await http.Response.fromStream(streamResponse);
+      print(response.body);
+      if (!response.headers['content-type']!.contains('application/json')) {
+        throw Exception('Server Returned None-Json Data');
+      }
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        print('✅ -> Post updated successfully: ${response.body}');
+      } else {
+        throw Exception('Failed to Update posts. Status code: ${response.statusCode}, Body: ${response.body}');
+      }
+    } catch (e) {
+      print('Error Updating Post: $e');
+      throw Exception('Error Updating Post: $e');
+    }
+  }
 }

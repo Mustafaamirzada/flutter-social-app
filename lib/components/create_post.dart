@@ -17,7 +17,6 @@ class _CreatePostBottomSheetState extends State<CreatePostBottomSheet> {
 
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
-  TextEditingController userIdController = TextEditingController();
   PostRepository postRepository = PostRepository();
 
   Future pickImage() async {

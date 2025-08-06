@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   } else {
                     return Center(
-                      child: Text('Problem Fetching Posts'),
+                      child: Text('Uable to connect to WiFi'),
                     );
                   }
                 },

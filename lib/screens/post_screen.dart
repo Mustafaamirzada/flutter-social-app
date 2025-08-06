@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_social_app/components/update_post.dart';
 import 'package:flutter_social_app/models/post.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -39,7 +40,15 @@ class PostScreen extends StatelessWidget {
                           ),
                           // Edit Button
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              final result = await showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                builder: (context) => UpdatePostSheet(id: posts!.id,),
+                              );
+                              
+                            },
                             icon: HugeIcon(
                               icon: HugeIcons.strokeRoundedEdit02,
                               color: Colors.grey,
@@ -56,7 +65,7 @@ class PostScreen extends StatelessWidget {
                       ),
 
                       SizedBox(height: 10),
-                      // computer creation date
+                      // post creation date
                       Text(
                         'Created Date: ${posts!.userId}',
                         style: TextStyle(
@@ -93,11 +102,6 @@ class PostScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              // icon: Icon(
-              //   Icons.arrow_back,
-              //   size: 25,
-              //   color: Theme.of(context).colorScheme.primary,
-              // ),
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedArrowLeft02,
                 color: Colors.white,

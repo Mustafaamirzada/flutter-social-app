@@ -15,19 +15,16 @@ class LikeController {
         headers: {
           "Authorization": "Bearer $token",
           "Accept": "application/json",
-          // "content-type" : "multipart/form-data"
         },
         body: {"user_id": uid.toString(), "post_id": pid.toString()},
       );
-      print(response.body);
 
       if (!response.headers['content-type']!.contains('application/json')) {
         throw Exception('Server Returned None Json Data');
       }
+
       if (response.statusCode == 200) {
         print('Liked Post');
-        final data = jsonDecode(response.body);
-        return data;
       } else {
         throw Exception('Feild to like Post: ${response.body}');
       }
