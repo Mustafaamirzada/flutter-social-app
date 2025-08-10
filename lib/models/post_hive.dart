@@ -19,6 +19,12 @@ class PostHiveModel extends HiveObject {
 
   @HiveField(4)
   String mediaUrl;
+  
+  @HiveField(5)
+  int likeCount;
+
+  @HiveField(6)
+  int commentCount;
 
   PostHiveModel({
     required this.id,
@@ -26,6 +32,8 @@ class PostHiveModel extends HiveObject {
     required this.description,
     required this.userId,
     required this.mediaUrl,
+    required this.likeCount,
+    required this.commentCount,
   });
 
 
@@ -36,6 +44,8 @@ class PostHiveModel extends HiveObject {
       description: post.description,
       userId: post.userId,
       mediaUrl: post.mediaUrl,
+      likeCount: post.likeCount,
+      commentCount: post.commentCount,
     );
   }
 
@@ -46,6 +56,9 @@ class PostHiveModel extends HiveObject {
       description: hiveModel.description,
       userId: hiveModel.userId,
       mediaUrl: hiveModel.mediaUrl,
+      likeCount: hiveModel.likeCount,
+      commentCount: hiveModel.commentCount,
+      
     );
   }
 }

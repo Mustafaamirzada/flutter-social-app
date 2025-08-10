@@ -41,7 +41,7 @@ class PostScreen extends StatelessWidget {
                           // Edit Button
                           IconButton(
                             onPressed: () async {
-                              final result = await showModalBottomSheet(
+                              await showModalBottomSheet(
                                 context: context,
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,

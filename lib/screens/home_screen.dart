@@ -171,6 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   } else if (snapshot.hasData) {
                     final posts = snapshot.data!;
+                    print(posts);
                     return ListView.builder(
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,

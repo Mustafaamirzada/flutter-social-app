@@ -1,34 +1,11 @@
-// import 'dart:convert';
-// Post postFromJson(String str) => Post.fromJson(json.decode(str));
-// List<Post> postListFromJson(String str) =>
-//   List<Post>.from(json.decode(str).map((x) => Post.fromJson(x)));
-
-// String postToJson(Post data) => json.encode(data.toJson());
-
-// class Posts {
-//   List<Post> data;
-
-//   Posts({
-//     required this.data,
-//   });
-
-//   factory Posts.fromJson(Map<String, dynamic> json) => Posts(
-//         data: List<Post>.from(json["data"].map((x) => Post.fromJson(x))),
-//       );
-
-//   Map<String, dynamic> toJson() => {
-//         "data": List<dynamic>.from(data.map((x) => x.toJson())),
-//       };
-// }
-
-// ignore_for_file: unused_local_variable
-
 class Post {
   final int id;
   final String title;
   final String description;
   final int userId;
   final String mediaUrl;
+  final int likeCount;
+  final int commentCount;
 
   Post({
     required this.id,
@@ -36,6 +13,8 @@ class Post {
     required this.description,
     required this.userId,
     required this.mediaUrl,
+    required this.likeCount,
+    required this.commentCount,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
@@ -46,6 +25,8 @@ class Post {
       description: attr["description"] ?? '',
       userId: attr["user_id"],
       mediaUrl: attr["media_url"] ?? '',
+      likeCount: json['like_count'] ?? 0,
+      commentCount: json['comment_count'] ?? 0,
     );
   }
 
@@ -55,5 +36,7 @@ class Post {
         "description": description,
         "user_id": userId,
         "media_url": mediaUrl,
+        "like_count": likeCount,
+        "comment_count": commentCount,
       };
 }

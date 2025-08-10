@@ -7,7 +7,6 @@ import 'package:flutter_social_app/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:readmore/readmore.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class PostCart extends StatefulWidget {
   final Post? post;
@@ -19,21 +18,6 @@ class PostCart extends StatefulWidget {
 
 class _PostCartState extends State<PostCart> {
   LikeController likeController = LikeController();
-  bool isliked = false;
-
-  // toggle between Like and Dislike Posts
-  void toggleLikes() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    final int? userId = prefs.getInt('id');
-    if (!isliked) {
-      likeController.likePost(userId!, widget.post!.id);
-      setState(() {
-        isliked = !isliked; // true
-      });
-    } else {
-      likeController.disLike(widget.post!.userId, widget.post!.id);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +58,6 @@ class _PostCartState extends State<PostCart> {
                     onPressed: () {}, icon: Icon(Icons.more_vert_outlined))
               ],
             ),
-
             ReadMoreText(
               widget.post!.description,
               trimMode: TrimMode.Line,
@@ -84,7 +67,6 @@ class _PostCartState extends State<PostCart> {
               trimExpandedText: 'Show less',
               moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
-            
             Container(
               height: 350,
               width: 360,
@@ -96,7 +78,31 @@ class _PostCartState extends State<PostCart> {
                 ),
               ),
             ),
-
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '${widget.post!.likeCount} Likes ',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  Text(
+                    '${widget.post!.commentCount} Comments ',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(
+              height: 1.0, // Space the divider takes up
+              thickness: 0.5, // Actual height of the line
+              color: Colors.grey,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,17 +133,10 @@ class _PostCartState extends State<PostCart> {
                 ),
                 // like button
                 IconButton(
-                  onPressed: () {
-                    toggleLikes();
+                  onPressed: () async {
+                    await likeController.likeAndDislike(widget.post!.id);
                   },
-                  icon: HugeIcon(
-                        icon: isliked
-        ? HugeIcons.strokeRoundedHeartCheck // Use filled heart icon
-        : HugeIcons.strokeRoundedHeartAdd,
-    color: isliked ? Colors.red : Colors.grey
-                    // icon: HugeIcons.strokeRoundedHeartAdd,
-                    // color: Colors.grey,
-                  ),
+                  icon: Icon(Icons.thumb_up, color: Colors.blue),
                 ),
                 // bookmark button
                 IconButton(
@@ -156,11 +155,6 @@ class _PostCartState extends State<PostCart> {
                   ),
                 )
               ],
-            ),
-            Divider(
-              height: 1.0, // Space the divider takes up
-              thickness: 0.5, // Actual height of the line
-              color: Colors.grey,
             ),
           ],
         ),
