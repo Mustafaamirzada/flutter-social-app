@@ -114,4 +114,6 @@ The test directory currently contains Flutter widget tests. Run `flutter test` b
 
 ## License
 
-No license is currently specified in this repository. Unless a license is added, reuse and redistribution are not granted by default.
+This project is licensed under the MIT License.
+
+You are free to use, copy, modify, merge, publish, distribute this software, subject to the conditions of the MIT License.
